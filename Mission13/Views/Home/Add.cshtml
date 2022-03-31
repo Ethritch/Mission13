@@ -1,0 +1,57 @@
+﻿@{
+}
+
+@model Mission13.Models.Bowler
+
+
+<h1>Enter a Bowler</h1>
+
+<div>
+    <form class="" method="post">
+        <div asp-validation-summary="All"></div>
+            <div class="form-group">
+                <label asp-for="BowlerFirstName">First Name</label>
+                <input asp-for="BowlerFirstName" />
+            </div>
+            <div class="form-group">
+                <label asp-for="BowlerLastName">Last Name</label>
+                <input asp-for="BowlerLastName" />
+            </div>
+            <div class="form-group">
+                <label asp-for="BowlerMiddleInit">Middle Inital</label>
+                <input asp-for="BowlerMiddleInit" />
+            </div>
+            <div class="form-group">
+                <label asp-for="BowlerAddress">Address</label>
+                <input asp-for="BowlerAddress" />
+            </div>
+            <div class="form-group">
+                <label asp-for="BowlerCity">City</label>
+                <input asp-for="BowlerCity" />
+            </div>
+            <div class="form-group">
+                <label asp-for="BowlerState">State</label>
+                <input asp-for="BowlerState" />
+            </div>
+            <div class="form-group">
+                <label asp-for="BowlerZip">Zip Code</label>
+                <input asp-for="BowlerZip" />
+            </div>
+            <div class="form-group">
+                <label asp-for="BowlerPhoneNumber">Phone Number</label>
+                <input asp-for="BowlerPhoneNumber" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Team">Team</label>
+                <select asp-for="TeamID">
+                    <option value="">Select a Team</option>
+                    @foreach (Team t in ViewBag.Team)
+                    {
+                        <option value="@t.TeamID">@t.TeamName</option>
+                    }
+                </select>
+            </div>
+        
+        <button type="submit">Submit Bowler</button>
+    </form>
+</div>
